@@ -1,0 +1,7 @@
+def principal() i= 1,j=2,k=5.5 :
+    imprime(i,"\n")
+    i = (j+7)
+    imprime(i)
+    k = 4.2 ** 1
+    imprime(,"\n",k,"\n")
+.

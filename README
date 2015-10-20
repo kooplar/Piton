@@ -1,0 +1,66 @@
+Piton is a compiler for a simple C like language made in C. I developed it as part of my compiler class mid 2014 for about 4 months.
+
+The initial goal of this compiler was to pass the class, but now the goal is to clean up the source code so that anyone can learn how to make a simple, efficient compiler in C.
+
+The compiler is made completly in C and has no dependencies other than the usual glibc, make, and gcc, etc. that should already be on your system. The compiler was developed under Linux but it should compile fine on windows.
+
+This compiler creates a PL0 type of bytecode which is interpreted by a virtual machine (stack machine) which I also developed. To run any programs compiled with this compiler you will also need to do a pull of my virtual machine project.
+
+Only one source file may be compiled, no linking going on (this is meant to be a simple compiler). The only requisite is the definition of a main 'principal' function. please see examples in tests/ directory. Please note some tests in this directory are meant to fail and produce compilation errors.
+
+to compile, just run 'make' from the source directory. to use the compiler, feed it a piton file. example:  ./pc ../tests/big_test
+  This will then produce a file called 'code.eje'. You need to feed this file into my virtual machine to run it.
+
+Please note that all keywords are in spanish (I attended a spanish speaking university) but all source code is documented in english, and even compilation errors are in english.
+
+some features part of the language:
+*global variables
+*strings, ints, floats
+*declare variables as constants
+*variables infer type based on assignemnet (think python)
+*arrays and matrices
+*functions
+*recursive function calls
+*keywords you know and love from C: if, else, else if, for, while, return, break, continue
+*operators:  <, <=, >, >=, ==, +, *, ** (power)
+*string concat with '+'
+TODO: more im forgetting, will update
+
+#TODO: write full language specification
+
+some examples of code that will compile (comments start with #):
+
+#locals are declared d function definition. def defines a function. In this examle we print every value in the array (syntax similar to doing a 'for in [list]' in python)
+
+def Sequence()  i = 1 : 
+   desde i en [12, 3, 8, 20, 100, 5] :
+      imprime("i= ", i, "\n")
+   .
+. 
+#blocks are ended with '.'
+
+
+#example 2
+# do a for where i will take the value from 1 to 10, skiping by 1. you can set the skip to , for example 3, and i will take values 1,4,7,10. In this example, if i is equal to 5 then we 'continue' else we print i. Then, while( true ) we print i, incrementing it by 1 untill i = 7, then we break fromthe while.
+
+def Test() i = 1:
+   desde i en 1 .. 10 pasa 1 :
+     si i == 5 :  continua .
+     imprime("i= ", i, "\n")
+   .
+   i=1
+   mientras( verdadero) :
+      imprime("i= ", i, '\n')
+      i = i + 1
+      si i == 7 : interrumpe .
+   .
+.
+
+#example 3
+#define a function that takes 2 string parameters, and returns a string. The return type is specified by placing any literal from the type we wish to return right after the closing ')' in the function definition. Here "hello string!" makes the return type a string since its type is string.
+
+def Concat(a = 'Hola' , b = "Hi" ) "hello string!" :
+   regresa a + " " + b
+.
+
+for more examples please see tests/ directory

@@ -1,0 +1,7 @@
+#works with my vm, but not with prof's.
+
+def principal()  a = "bryan", b= "hola":
+    si a != b: 
+        imprime("hola")
+    .
+.

@@ -1,0 +1,9 @@
+#prints 9 always
+
+def FacIter( n = 0, b =9  ) 7 i=9,a =7,c=9 :
+    regresa i
+.
+
+def principal() b = 9:
+    imprime(FacIter(5,6))
+.

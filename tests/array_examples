@@ -1,0 +1,31 @@
+matriz = [4][4]
+
+def imp(i = 9) 7 :
+    regresa 0
+ .
+
+def LlenaMat(i=4, j=4, k=1) ii=jj=1:
+    desde ii en 1 .. i pasa 1:
+          desde jj en 1 .. j pasa 1 :
+              matriz[ii][jj] = k
+          .
+    .
+.
+
+def ImpMat(i=12,j=0) 6 ii=jj=1:
+     desde ii en 1 .. i pasa 1 :
+          desde jj en 1 .. j pasa 1 :
+               imprime( "Matriz[", ii, "][", jj, "]= ", matriz[ii][jj], "\n" )
+          .
+     . 
+    regresa 5
+.
+
+def principal() i=2:
+    LlenaMat(4,4,9)
+    ImpMat(4,4)
+     #this should work?
+    #i = 2 + ImpMat(4,4)
+    #imprime("i=",i,"\n")
+    imprime(ImpMat(4,4))
+.

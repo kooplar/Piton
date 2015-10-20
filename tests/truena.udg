@@ -1,0 +1,162 @@
+PI = 3.141592 c 
+MAX = 30 c
+
+vector = [12]
+matriz = [15][15]
+
+# Factorial Recursivo
+
+def FacRec( n = 0 ) 5  :
+   si  n < 2  : 
+      regresa 1 
+   . 
+   sino : 
+      regresa n *  FacRec( n - 1 ) 
+   .
+.
+
+
+
+# Factorial Ieterativo
+# para
+# prueba
+
+funcion FacIter( n = 0  ) 5  facto = i = 1 :
+  desde i en n .. 2 pasa -1 :
+     facto = facto * i
+  . 
+  regresa facto
+.
+
+def Concat(a = 'Hola' , b = "Hi" ) "Hola" :
+   regresa a + " " + b
+.
+
+def Selecciona( ) opc = 3 n = 4 :
+    mientras( verdadero ) :
+       imprime("Dame un numero: ")
+       lee( n )
+       imprime(
+   "Factorial 1]Recursivo 2]Iterativo 3]Salir: " )
+       lee( opc )
+       si opc == 3 : interrumpe .
+       otsi opc == 1 : 
+          imprime("Factorial Recursivo de ", 
+          n, " es= ", FacRec( n ), "\n" )
+       .
+       otsi opc == 2 :
+          imprime("Factorial Iterativo de ", 
+          n, " es= ", FacIter( n ), "\n" )
+       .
+       sino :
+          imprime("Opcion No valida\n")
+       .
+    .
+.
+
+def VolCil(radio=4.5, altura=2.3) 4.5 :
+   regresa PI * radio ** 2 * altura
+.
+
+def Test() i = 1:
+   desde i en 1 .. 10 pasa 1 :
+     si i == 5 :  continua .
+     imprime("i= ", i, "\n")
+   .
+   i=1
+   mientras( verdadero) :
+      imprime("i= ", i, '\n')
+      i = i + 1
+      si i == 7 : interrumpe .
+   .
+.
+
+def LeeVec(k = 7) i = 1 :
+   desde i en 1 .. k pasa 1 :
+      imprime("Vector[", i, "]: ")
+      lee(vector[i])
+   .
+.
+
+def Secuencia()  i = 1 :
+   desde i en [12, 3, 8, 20, 100, 5] :
+      imprime("i= ", i, "\n")
+   .
+.
+
+def OrdVec(k = 7) temp = 1, j = 1, k = 1 :
+   desde i en 1 .. k - 1 pasa 1 :
+      desde j en i + 1 .. k pasa 1 :
+         si vector[i] > vector[j] :
+            temp = vector[i]
+            vector[i] = vector[j]
+            vector[j] = temp
+         .
+      .
+   .
+.
+
+def ImpVec( k = 4) :
+   desde i en 1 .. k pasa 1 :
+      imprime("Vector[",i,"]= ", vector[i], "\n")
+   .
+.
+
+def LeeMat( k = 4 ) i = j = 1 :
+    desde i en 1 .. k pasa 1 :
+        desde j en 1 .. k pasa 1 :
+           imprime("Matriz[", i, "][", j, "]: ")
+           lee(matriz[i][j])
+         .
+    .
+.
+
+def MulMat(k = 2, v = 3) i = j = 1 :
+   desde i en 1 .. k pasa 1 :
+      desde j en 1 .. k pasa 1 :
+         matriz[i][j] = matriz[i][j] * v
+      .
+   .
+.
+
+def ImpMat(k = 12) i = j = 5 :
+     desde i en 1 .. k pasa 1 :
+        desde j en 1 .. k pasa 1 :
+           imprime( "Matriz[", i, "][", j, 
+                    "]= ", matriz[i][j], "\n" )
+        .
+     .
+.
+
+def Compara( a = 4.5, b = 3.3 ) falso :
+     regresa a > b
+.
+
+def principal() r = s = 3.3, 
+                n = 4, alfa = beta = "Hi" :
+    Selecciona()
+    imprime("Dame Radio: ")
+    lee( r )
+    imprime("Dame Altura: ")
+    lee( s )
+    imprime("El Volumen del Cilindro= ",
+              VolCil( r, s ), '\n')
+    imprime("Es el radio= ", r, 
+            " mayor que la Altura= ", s, "? ",
+        	   Compara( r, s ), "\n" )
+    LeeVec( 10 )
+    OrdVec( 10 )
+    ImpVec( 10 )
+    imprime("Dame elementos de Matriz NxN: ")
+    lee( n )
+    LeeMat( n )
+    MulMat( n, 100 )
+    ImpMat( n )
+    Test()
+    imprime("Dame tu nombre: ")
+    lee(alfa)
+    imprime("Dame tu Apellido: ")
+    lee(beta)
+    imprime("Hola ", Concat(alfa, beta), 
+            " ya pasaste!!!\n")
+.
