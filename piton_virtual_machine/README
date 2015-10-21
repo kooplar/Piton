@@ -1,0 +1,19 @@
+This is the virtual machine for the piton language. It is a stack based
+virtual machine.
+
+to compile the virtual machine:
+
+cd src && make
+
+to run a test using a previously compiled piton source file:
+
+src/piton tests/big_test
+
+to run it in debug mode, use '-d' before the piton bytecode file:
+
+src/piton -d tests/big_test
+
+type help in the debugger for more info on its usage. Currently the
+debugger doesnt not dislay the piton source code, only the byte code.
+However it is possible to place breakpoints, print variable values, among
+other utilities.

@@ -1,0 +1,19 @@
+_P,I,I,2,0,#,
+_E1,I,I,3,0,#,
+aprincipal$,V,A,0,0,#,
+bprincipal$,V,A,0,0,#,
+_E2,I,I,13,0,#,
+@
+1 JMP 0, _E1
+2 JMP 0, 1
+3 LIT "bryan", 0
+4 STO 0, aprincipal$
+5 LIT "hola", 0
+6 STO 0, bprincipal$
+7 LOD aprincipal$, 0
+8 LOD bprincipal$, 0
+9 OPR 0, 13
+10 JMC F, _E2
+11 LIT "hola", 0
+12 OPR 0, 20
+13 OPR 0, 0
