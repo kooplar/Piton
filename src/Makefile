@@ -30,18 +30,18 @@ clean:
 
 .PHONY: install
 install: $(EXECUTABLE)
-	sudo cp $(EXECUTABLE) /usr/bin
+	sudo cp $(EXECUTABLE) /usr/local/bin
 	
 .PHONY: uninstall
 uninstall:
-	sudo rm -f /usr/bin/$(EXECUTABLE)
+	sudo rm -f /usr/local/bin/$(EXECUTABLE)
 
 .PHONY: backup
 backup:
-	@mkdir -p ./backup/include #make folder (don't complain if it already exists)
-	@mkdir -p ./backup/src #make folder (don't complain if it already exists)
-	@cp -u ./include/*.h ./backup/include &> /dev/null #move header file backups into desired folder
-	@cp -u *.c ./backup/src &> /dev/null #move source file backups into desired folder
+	@mkdir -p ./backup/include
+	@mkdir -p ./backup/src
+	@cp -u ./include/*.h ./backup/include &> /dev/null
+	@cp -u *.c ./backup/src &> /dev/null
 
 .PHONY: help
 help:
@@ -50,5 +50,5 @@ help:
 	@echo "    debug : builds Piton with debug symbols"
 	@echo "    clean "
 	@echo "    backup "
-	@echo "    install : installs to /usr/bin "
+	@echo "    install : installs to /usr/local/bin "
 	@echo "    unistall"
